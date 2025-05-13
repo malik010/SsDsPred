@@ -1,6 +1,6 @@
-bio-embeddings
-numpy
-torch
-transformers
+bio-embeddings[all]==0.2.4
+torch>=2.0
+transformers>=4.32.0
+numpy>=1.24
 scipy
 pandas

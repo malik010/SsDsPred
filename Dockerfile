@@ -1,31 +1,34 @@
-# Base R image with Shiny Server
+# Base image: R with Shiny Server
 FROM rocker/shiny:4.3.1
 
-# System dependencies for Python, pip, and build tools
+# System dependencies
 RUN apt-get update && apt-get install -y \
-    python3 python3-pip python3-venv \
-    libcurl4-openssl-dev libssl-dev libxml2-dev \
-    git && \
+    python3 python3-venv python3-pip \
+    libcurl4-openssl-dev libssl-dev libxml2-dev git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install required R packages (add more if needed)
-RUN R -e "install.packages(c('shiny', 'shinydashboard', 'caret', 'seqinr', 'ggplot2', 'lattice', 'reticulate'))"
+# Create and activate Python virtualenv
+WORKDIR /opt/venv
+RUN python3 -m venv . && \
+    . bin/activate && \
+    pip install --upgrade pip
 
-# Set working directory inside the container
-WORKDIR /srv/shiny-server/app
+# Install Python packages
+COPY requirements.txt /tmp/requirements.txt
+RUN . bin/activate && pip install -r /tmp/requirements.txt
 
-# Copy your entire app into the container
+# Set reticulate environment variable
+ENV RETICULATE_PYTHON=/opt/venv/bin/python
+
+# Install R packages
+RUN R -e "install.packages(c('shiny', 'shinydashboard', 'seqinr', 'caret', 'ggplot2', 'lattice', 'markdown', 'reticulate'), repos='http://cran.rstudio.com/')"
+
+# Set working directory and copy app files
+WORKDIR /srv/shiny-server/
 COPY . .
 
-# Set up Python virtual environment
-RUN python3 -m venv venv
-ENV PATH="/srv/shiny-server/app/venv/bin:$PATH"
-
-# Install Python dependencies
-RUN pip install --upgrade pip numpy
-RUN pip install -r requirements.txt
-
-# Ensure Shiny Server serves your app
+# Expose Shiny default port
 EXPOSE 3838
-CMD ["/usr/bin/shiny-server"]
 
+# Start Shiny server
+CMD ["/usr/bin/shiny-server"]
