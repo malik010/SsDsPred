@@ -22,7 +22,7 @@ RUN python3 -m venv venv
 ENV PATH="/srv/shiny-server/app/venv/bin:$PATH"
 
 # Install Python dependencies
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip numpy
 RUN pip install -r requirements.txt
 
 # Ensure Shiny Server serves your app
