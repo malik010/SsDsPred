@@ -1,4 +1,6 @@
-bio-embeddings[all]
+bio-embeddings
 numpy
 torch
 transformers
+scipy
+pandas
