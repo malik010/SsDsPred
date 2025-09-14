@@ -65,6 +65,19 @@ runApp("app.R")
 # Reference
 - **SsDsPred: A Multi-Embedding SVM Framework for Predicting Single- and Double-Stranded DNA-Binding Proteins (Manuscript Submitted).**
 
-## Contact
+# Contact
+Balachandran Manavalan
+Associate Professor 
+Department of Integrative Biotechnology
+College of Biotechnology & Bioengineering
+Sungkyunkwan University
+Biotechnology and Bioengineering Building 2, 
+Seobu-ro, Jangan-gu, Suwon-si, Gyeonggi-do, 16419, Republic of Korea
+Email: bala2022@skku.edu
 
-<img src="https://github.com/malik010/SsDsPred/blob/main/www/figures/contact.png" alt="drawing"/>
+## OR
+Adeel Malik
+Research Professor
+Institute of Intelligence Informatics Technology,
+Sangmyung University, Seoul, South Korea
+Email: adeel@procarb.org
