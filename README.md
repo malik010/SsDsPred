@@ -31,6 +31,7 @@ cd SsDsPred
 ```
 ## ▶️ Running the App from R:
 library(shiny)
+
 runApp("app.R")
 
 
