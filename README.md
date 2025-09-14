@@ -64,3 +64,7 @@ runApp("app.R")
 
 # Reference
 - **SsDsPred: A Multi-Embedding SVM Framework for Predicting Single- and Double-Stranded DNA-Binding Proteins (Manuscript Submitted).**
+
+## Contact
+
+<img src="https://github.com/malik010/SsDsPred/blob/main/www/figures/contact.png" alt="drawing"/>
