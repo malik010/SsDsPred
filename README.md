@@ -24,7 +24,7 @@
 
 ## 📦 Installation
 
-### 1. Clone the repository
+### Clone the repository
 ```bash
 git clone https://github.com/malik010/SsDsPred.git
 cd SsDsPred
@@ -36,7 +36,7 @@ runApp("app.R")
 
 
 ## 📖 Usage Instructions
-# 1. Instructions for using SsDsPred
+## Instructions for using SsDsPred
 
 ## Input
 - Input to the SsDsPred consists of **2** or **more** fasta formatted prote8in sequences. These sequences can either be pasted directly on the form or uploaded as a file.
@@ -62,5 +62,5 @@ runApp("app.R")
       Columns 3-5: Probability scores.
 ```
 
-# 4. Reference
+# Reference
 - **SsDsPred: A Multi-Embedding SVM Framework for Predicting Single- and Double-Stranded DNA-Binding Proteins (Manuscript Submitted).**
